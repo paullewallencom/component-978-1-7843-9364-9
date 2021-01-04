@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Demo</title>
+    <meta charset="utf-8">
+    <script src="js/bosonic-polyfills.js"></script>
+    <script src="js/b-toggle-button.js"></script>
+    <link href="css/b-toggle-button.css" rel="stylesheet">
+    <style>
+
+        .win8 {
+            border: 2px solid #999999;
+            border-radius: 0;
+            box-shadow: inset 0px 0px 1px 0 rgba(0, 0, 0, 0.1);
+            padding: 0 10px;
+        }
+        .win8.on {
+            border: 2px solid #999999;
+        }
+        .win8 .b-toggle-on {
+            background-color: #2E8DEF;
+        }
+        .win8 .b-toggle-off {
+            background-color: #CCCCCC;
+        }
+        .win8 .b-toggle-thumb {
+            width: 24px;
+            border-radius: 0;
+            background-color: black;
+        }
+
+        .ios5 {
+            border: 2px solid #666666;
+            border-radius: 30px;
+            box-shadow: inset 0px 0px 1px 0 rgba(0, 0, 0, 0.1);
+            padding: 0 10px;
+        }
+        .ios5.on {
+            border: 2px solid #666666;
+        }
+        .ios5 .b-toggle-on {
+            background-color: #6BB2ED;
+        }
+        .ios5 .b-toggle-off {
+            background-color: white;
+        }
+        .ios5 .b-toggle-thumb {
+            width: 24px;
+            border-radius: 30px;
+            border: 2px solid #666666;
+            margin: -2px;
+            background-color: white;
+        }
+
+        .kitkat {
+            border-radius: 0;
+            border: 0;
+        }
+        .kitkat.on {
+            border: 0;
+        }
+        .kitkat .b-toggle-on {
+            background-color: #27A1CA;
+        }
+        .kitkat .b-toggle-off {
+            background-color: #A1A1A1;
+            color: #333333;
+        }
+        .kitkat .b-toggle-thumb {
+            width: 30px;
+            left: calc(50% - 15px);
+            background-color: #333333;
+            border-radius: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>with caption</h3>
+    <b-toggle-button id="toggle"></b-toggle-button>
+
+    <h3>without caption</h3>
+    <b-toggle-button nocaption></b-toggle-button>
+
+    <h3>long custom caption</h3>
+    <b-toggle-button style="padding: 0 15px" oncaption="activated" offcaption="deactivated"></b-toggle-button>
+    <p>N.B.: <em>As <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex#Browser_compatibility">compatibility of display: flex</a> is IE10+, we use a simple padding to adapt the toggle button with long custom caption</em></p>
+
+    <h3>on by default</h3>
+    <b-toggle-button checked></b-toggle-button>
+
+    <h3>stylized toggle</h3>
+    <ul>
+        <li>
+            <p>Windows 8</p>
+            <b-toggle-button nocaption class="win8"></b-toggle-button>
+        </li>
+        <li>
+            <p>iOS 5</p>
+            <b-toggle-button class="ios5"></b-toggle-button>
+        </li>
+        <li>
+            <p>Android KitKat</p>
+            <b-toggle-button class="kitkat"></b-toggle-button>
+        </li>
+    </ul>
+    <script type="text/javascript">
+    </script>
+</body>
